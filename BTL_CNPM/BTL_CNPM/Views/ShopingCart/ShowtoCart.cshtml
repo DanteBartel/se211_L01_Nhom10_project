@@ -1,0 +1,46 @@
+﻿@model BTL_CNPM.Models.Cart
+
+@{
+    ViewBag.Title = "ShowtoCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowtoCart</h2>
+@if (Model !=null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Sum</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model.Items)
+            {
+                double total =Convert.ToDouble(item._shopping_product.Pro_Price)* item._shopping_quantity;
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item._shopping_product.ProName)
+                    </td>
+                    <td>
+                        <img src="@Url.Content(item._shopping_product.Pro_Image)" style="width:100px;height:100px;" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item._shopping_product.Pro_Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model =>item._shopping_quantity)
+                    </td>
+                    <td>
+                        Total:@total
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
