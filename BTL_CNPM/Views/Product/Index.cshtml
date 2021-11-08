@@ -1,0 +1,71 @@
+﻿@model IEnumerable<BTL_CNPM.Models.Product>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IDPro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pro_Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pro_Des)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pro_Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCate)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDPro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pro_Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pro_Des)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pro_Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

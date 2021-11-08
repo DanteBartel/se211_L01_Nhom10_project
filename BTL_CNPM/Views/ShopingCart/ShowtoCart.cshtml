@@ -1,0 +1,82 @@
+﻿@model BTL_CNPM.Models.Cart
+
+@{
+    ViewBag.Title = "ShowtoCart";
+    Layout = "~/Views/Shared/_Layout - ShowtoCart.cshtml";
+}
+<h2>ShowtoCart</h2>
+@if (Model != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Update Q.ty</th>
+                <th>Sum</th>
+                <th>Delete Order</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                double total = Convert.ToDouble(item._shopping_product.Pro_Price) * item._shopping_quantity;
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item._shopping_product.ProName)
+                    </td>
+                    <td>
+                        <img src="@Url.Content(item._shopping_product.Pro_Image)" style="width:100px;height:100px;" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item._shopping_product.Pro_Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item._shopping_quantity)
+                    </td>
+                    <td>
+                        @using (Html.BeginForm("Update_Qty_Cart", "ShopingCart"))//Goi action trong controller
+                        {
+                            <input type="hidden" value="@item._shopping_product.IDPro" name="IDpro" /> //Lay data ID de update qty theo id pro
+                            <input type="number" value="@item._shopping_quantity" name="Quantity" style="width:75px;height:20px" />// Tao input de update qty
+                            <br />
+                            <input type="submit" value="Update" style="width:75px;height:25px"></input>// Tao btn submit de load data len form Showtocart
+                        }
+                    </td>
+                    <td>
+                        Total:@total
+                    </td>
+                    <td>
+                        <a href="/ShopingCart/Remove/@item._shopping_product.IDPro">
+                            <input type="button" value="Remove" />
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7" style="text-align:center"><h4>Sum Total:@Model.Total()</h4></td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="col-sm-10">
+        <div class="clearfix">
+            <a href="@Url.Action("Index","Home")">
+                <img src="@Url.Content("~/Content/Image/quaylai1.png")" style="width:50px;height:30px" />
+                <h6>Continue to Order</h6>
+            </a>
+        </div>
+    </div>
+    <div class="col-sm-2">
+        <div class="clearfix d-flex justify-content-end">
+            <a href="#" style="position:relative;right">
+                <input type="submit" value="Comfirm Order" style="width:120px;height:30px" />
+            </a>
+        </div>
+    </div>
+
+}
+

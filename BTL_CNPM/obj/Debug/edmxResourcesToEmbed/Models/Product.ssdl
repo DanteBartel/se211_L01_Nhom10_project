@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FoodOrderingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="IDPro" />
+    </Key>
+    <Property Name="IDPro" Type="int" Nullable="false" />
+    <Property Name="ProName" Type="varchar(max)" Nullable="false" />
+    <Property Name="Pro_Quantity" Type="int" Nullable="false" />
+    <Property Name="Pro_Des" Type="nvarchar(max)" />
+    <Property Name="Pro_Image" Type="nvarchar(max)" />
+    <Property Name="IdCate" Type="int" />
+    <Property Name="Pro_Price" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="FoodOrderingModelStoreContainer">
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
