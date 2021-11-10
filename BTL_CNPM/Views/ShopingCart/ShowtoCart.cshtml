@@ -11,6 +11,7 @@
         <thead>
             <tr>
                 <th>Product Name</th>
+                <th>Prodect ID</th>
                 <th>Image</th>
                 <th>Description</th>
                 <th>Price</th>
@@ -27,6 +28,9 @@
                 <tr>
                     <td>
                         @Html.DisplayFor(model => item._shopping_product.ProName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item._shopping_product.IDPro)
                     </td>
                     <td>
                         <img src="@Url.Content(item._shopping_product.Pro_Image)" style="width:100px;height:100px;" />

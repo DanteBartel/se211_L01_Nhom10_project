@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\PC\Desktop\BTL_CNPM\BTL_CNPM\Models\DBProduct.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Github file\se211_L01_Nhom10_project\se211_L01_Nhom10_project\BTL_CNPM\Models\DBProduct.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
