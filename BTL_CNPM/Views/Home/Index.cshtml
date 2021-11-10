@@ -30,21 +30,84 @@
     </style>
 </head>
 <h2>Order Food</h2>
+ 
 <div class="container">
     <div class="row">
         @foreach (var item in Model)
         {
+            string temp = item.IDPro.ToString();
+
             <div class="col-sm-6 col-md-4 col-lg-3" id="magincard">
                 <div class="card">
                     @Html.DisplayFor(model => item.ProName)
                     <img src="@Url.Content(item.Pro_Image)" style="height:200px;width:200px;margin:10px" />
                     Price:@Html.DisplayFor(model => item.Pro_Price)
                     <br />
+                    <a class="btn" data-toggle="modal" data-target="#@temp">
+                        <button class="btn btn-default">Detail</button>                                       
+                    </a>
                     <a href="/ShopingCart/Addtocart/@item.IDPro">
                         <img src="@Url.Content("~/Content/Image/Cart1.png")" style="width:50px;height:40px" />
-                    </a>
-                </div> 
+                    </a>                   
+                </div>
             </div>
+
+            <div class="modal fade" id="@temp">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button data-dismiss="modal" class="close">
+                                <span>&times;</span>
+                            </button>
+                            <div class="modal-title"> ADD TO CART </div>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img src="@Url.Content(item.Pro_Image)" style="height:150px;width:150px;margin:10px" />
+                                    </div>  
+                                    <div class="col-md-5">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                ID: @item.IDPro
+                                            </div>
+                                            <div class="col-md-5">
+                                                Unit Price: @item.Pro_Price
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                Name: @item.ProName
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                Description: @item.Pro_Des
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <a href="/ShopingCart/Addtocart/@item.IDPro">
+                                <button class="btn btn-primary">Choose</button>
+                            </a>                         
+                            <button class="btn btn-default" data-dismiss="modal">Cancel</button>                                                    
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
         }
     </div>
 </div>
+
+
