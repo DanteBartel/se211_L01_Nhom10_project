@@ -41,7 +41,7 @@
                 <div class="card">
                     @Html.DisplayFor(model => item.ProName)
                     <img src="@Url.Content(item.Pro_Image)" style="height:200px;width:200px;margin:10px" />
-                    Price:@Html.DisplayFor(model => item.Pro_Price)
+                    Price: @Html.DisplayFor(model => item.Pro_Price) VND
                     <br />
                     <a class="btn" data-toggle="modal" data-target="#@temp">
                         <button class="btn btn-default">Detail</button>                                       
@@ -75,7 +75,7 @@
                                                 ID: @item.IDPro
                                             </div>
                                             <div class="col-md-5">
-                                                Unit Price: @item.Pro_Price
+                                                Unit Price: @item.Pro_Price VND
                                             </div>
                                         </div>
                                         <div class="row">

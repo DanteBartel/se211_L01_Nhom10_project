@@ -9,15 +9,15 @@ Create table dbo.Products
 	Pro_Price Nvarchar(max)
 );
 
-insert Products values(1,N'CheckendA',20,N'Fired Chickend spicy','~/Content/Image/ComboA.jpg',1,'79.000 ')
-insert Products values(2,N'CheckendA',20,N'Fired Chickend spicy','~/Content/Image/ComboA.jpg',1,'79.000 ')
-insert Products values(3,N'CheckendA',20,N'Fired Chickend spicy','~/Content/Image/ComboA.jpg',1,'79.000 ')
-insert Products values(4,N'CheckendA',20,N'Fired Chickend spicy','~/Content/Image/ComboA.jpg',1,'79.000 ')
-insert Products values(5,N'CheckendA',20,N'Fired Chickend spicy','~/Content/Image/ComboA.jpg',1,'79.000 ')
-insert Products values(6,N'CheckendA',20,N'Fired Chickend spicy','~/Content/Image/ComboA.jpg',1,'79.000 ')
-insert Products values(7,N'CheckendA',20,N'Fired Chickend spicy','~/Content/Image/ComboA.jpg',1,'79.000 ')
-insert Products values(8,N'CheckendA',20,N'Fired Chickend spicy','~/Content/Image/ComboA.jpg',1,'79.000 ')
-insert Products values(9,N'CheckendA',20,N'Fired Chickend spicy','~/Content/Image/ComboA.jpg',1,'79.000 ')
+insert Products values(1,N'Combo Ga Ran A',20,N'2 Mieng Ga Gion Cay + 1 Pepsi Lon','~/Content/Image/ComboA.jpg',1,'79.000 ')
+insert Products values(2,N'Ga Quay (1 Mieng)',20,N'1 Mieng Ga Quay Giay Bac','~/Content/Image/ComboB.jpg',1,'66.000 ')
+insert Products values(3,N'Com Phi Le Ga Gion (1 Phan)',20,N'Com Phi Le Ga Gion (1 Phan)','~/Content/Image/ComboC.jpg',1,'40.000 ')
+insert Products values(4,N'Pho mai vien',20,N'Pho mai vien','~/Content/Image/ComboD.jpg',1,'28.000 ')
+insert Products values(5,N'Khoai tay chien (Vua)',20,N'Khoai tay chien (Vua)','~/Content/Image/ComboE.jpg',1,'14.000 ')
+insert Products values(6,N'Banh Trung',20,N'Banh Trung','~/Content/Image/ComboF.jpg',1,'17.000 ')
+insert Products values(7,N'Hop Milo',20,N'Hop Milo','~/Content/Image/ComboG.jpg',1,'19.000 ')
+insert Products values(8,N'Pepsi Vi Chanh Khong Calo',20,N'Pepsi Vi Chanh Khong Calo','~/Content/Image/ComboH.jpg',1,'17.000 ')
+insert Products values(9,N'Tra dao',20,N'Tra dao','~/Content/Image/ComboI.jpg',1,'23.000 ')
 
 ALTER TABLE dbo.Products
   ADD Pro_Price Nvarchar(max);

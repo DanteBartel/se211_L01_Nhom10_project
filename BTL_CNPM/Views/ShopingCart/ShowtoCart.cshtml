@@ -4,14 +4,14 @@
     ViewBag.Title = "ShowtoCart";
     Layout = "~/Views/Shared/_Layout - ShowtoCart.cshtml";
 }
-<h2>ShowtoCart</h2>
+<h2>Cart</h2>
 @if (Model != null)
 {
     <table class="table">
         <thead>
             <tr>
                 <th>Product Name</th>
-                <th>Prodect ID</th>
+                
                 <th>Image</th>
                 <th>Description</th>
                 <th>Price</th>
@@ -29,9 +29,7 @@
                     <td>
                         @Html.DisplayFor(model => item._shopping_product.ProName)
                     </td>
-                    <td>
-                        @Html.DisplayFor(model => item._shopping_product.IDPro)
-                    </td>
+                    
                     <td>
                         <img src="@Url.Content(item._shopping_product.Pro_Image)" style="width:100px;height:100px;" />
                     </td>
@@ -39,7 +37,7 @@
                         @Html.DisplayFor(model => item._shopping_product.Pro_Des)
                     </td>
                     <td>
-                        @Html.DisplayFor(model => item._shopping_product.Pro_Price)
+                        @Html.DisplayFor(model => item._shopping_product.Pro_Price) VND
                     </td>
                     <td>
                         @Html.DisplayFor(model => item._shopping_quantity)
@@ -54,7 +52,7 @@
                         }
                     </td>
                     <td>
-                        Total:@total
+                        Total: @total.000 VND
                     </td>
                     <td>
                         <a href="/ShopingCart/Remove/@item._shopping_product.IDPro">
@@ -66,7 +64,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="7" style="text-align:center"><h4>Sum Total:@Model.Total()</h4></td>
+                <td colspan="7" style="text-align:center"><h4>Sum Total: @Model.Total().000 VND</h4></td>
             </tr>
         </tfoot>
     </table>
@@ -80,11 +78,41 @@
     </div>
     <div class="col-sm-2">
         <div class="clearfix d-flex justify-content-end">
-            <a href="#" style="position:relative;right">
-                <input type="submit" value="Comfirm Order" style="width:120px;height:30px" />
+            <a data-toggle="modal" data-target="#confirmOrder" style="position:relative;right">
+                <input type="submit" value="Confirm Order" style="width:120px;height:30px" />
             </a>
+
+            <div class="modal fade" id="confirmOrder">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <div class="modal-title"> ORDER CONFIRMATION </div>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    Your order is being confirm. Please wait.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <a href="@Url.Action("Index","Home")">
+                                <button class="btn btn-primary">Back to Menu</button>
+                            </a>
+                            <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 
+    
 }
 
