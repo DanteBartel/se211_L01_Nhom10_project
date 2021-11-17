@@ -10,7 +10,7 @@ namespace BTL_CNPM.Controllers
 {
     public class ShopingCartController : Controller
     {
-        FoodOrderingEntitiesPro _db = new FoodOrderingEntitiesPro();
+        FoodOrderingEntities _db = new FoodOrderingEntities();
         public Cart GetCart()
         {
             // Tao session luu thong tin khi 1 client connect

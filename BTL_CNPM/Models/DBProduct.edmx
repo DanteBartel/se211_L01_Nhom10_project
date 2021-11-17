@@ -16,37 +16,10 @@
           <Property Name="Pro_Image" Type="nvarchar(max)" />
           <Property Name="IdCate" Type="int" />
           <Property Name="Pro_Price" Type="nvarchar(max)" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'FoodOrdering.dbo.PurchaseOrderDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="PurchaseOrderDetail">
-          <Key>
-            <PropertyRef Name="PurchaseOrderID" />
-            <PropertyRef Name="LineNumber" />
-          </Key>
-          <Property Name="PurchaseOrderID" Type="int" Nullable="false" />
-          <Property Name="LineNumber" Type="smallint" Nullable="false" />
-          <Property Name="ProductID" Type="int" />
-          <Property Name="UnitPrice" Type="money" />
-          <Property Name="OrderQty" Type="smallint" />
-          <Property Name="ReceivedQty" Type="float" />
-          <Property Name="RejectedQty" Type="float" />
-          <Property Name="DueDate" Type="datetime" />
+          <Property Name="Pro_Type" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityContainer Name="FoodOrderingModelStoreContainer">
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PurchaseOrderDetail" EntityType="Self.PurchaseOrderDetail" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [PurchaseOrderDetail].[PurchaseOrderID] AS [PurchaseOrderID], 
-    [PurchaseOrderDetail].[LineNumber] AS [LineNumber], 
-    [PurchaseOrderDetail].[ProductID] AS [ProductID], 
-    [PurchaseOrderDetail].[UnitPrice] AS [UnitPrice], 
-    [PurchaseOrderDetail].[OrderQty] AS [OrderQty], 
-    [PurchaseOrderDetail].[ReceivedQty] AS [ReceivedQty], 
-    [PurchaseOrderDetail].[RejectedQty] AS [RejectedQty], 
-    [PurchaseOrderDetail].[DueDate] AS [DueDate]
-    FROM [dbo].[PurchaseOrderDetail] AS [PurchaseOrderDetail]</DefiningQuery>
-          </EntitySet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -64,31 +37,17 @@ warning 6002: The table/view 'FoodOrdering.dbo.PurchaseOrderDetail' does not hav
           <Property Name="Pro_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IdCate" Type="Int32" />
           <Property Name="Pro_Price" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Pro_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="PurchaseOrderDetail">
-          <Key>
-            <PropertyRef Name="PurchaseOrderID" />
-            <PropertyRef Name="LineNumber" />
-          </Key>
-          <Property Name="PurchaseOrderID" Type="Int32" Nullable="false" />
-          <Property Name="LineNumber" Type="Int16" Nullable="false" />
-          <Property Name="ProductID" Type="Int32" />
-          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="OrderQty" Type="Int16" />
-          <Property Name="ReceivedQty" Type="Double" />
-          <Property Name="RejectedQty" Type="Double" />
-          <Property Name="DueDate" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityContainer Name="FoodOrderingEntitiesPro" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="FoodOrderingEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Products" EntityType="Self.Product" />
-          <EntitySet Name="PurchaseOrderDetails" EntityType="Self.PurchaseOrderDetail" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="FoodOrderingModelStoreContainer" CdmEntityContainer="FoodOrderingEntitiesPro">
+        <EntityContainerMapping StorageEntityContainer="FoodOrderingModelStoreContainer" CdmEntityContainer="FoodOrderingEntities">
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="FoodOrderingModel.Product">
               <MappingFragment StoreEntitySet="Products">
@@ -99,20 +58,7 @@ warning 6002: The table/view 'FoodOrdering.dbo.PurchaseOrderDetail' does not hav
                 <ScalarProperty Name="Pro_Image" ColumnName="Pro_Image" />
                 <ScalarProperty Name="IdCate" ColumnName="IdCate" />
                 <ScalarProperty Name="Pro_Price" ColumnName="Pro_Price" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PurchaseOrderDetails">
-            <EntityTypeMapping TypeName="FoodOrderingModel.PurchaseOrderDetail">
-              <MappingFragment StoreEntitySet="PurchaseOrderDetail">
-                <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
-                <ScalarProperty Name="LineNumber" ColumnName="LineNumber" />
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-                <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
-                <ScalarProperty Name="ReceivedQty" ColumnName="ReceivedQty" />
-                <ScalarProperty Name="RejectedQty" ColumnName="RejectedQty" />
-                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="Pro_Type" ColumnName="Pro_Type" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

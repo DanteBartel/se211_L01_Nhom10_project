@@ -21,5 +21,6 @@ namespace BTL_CNPM.Models
         public string Pro_Image { get; set; }
         public Nullable<int> IdCate { get; set; }
         public string Pro_Price { get; set; }
+        public string Pro_Type { get; set; }
     }
 }

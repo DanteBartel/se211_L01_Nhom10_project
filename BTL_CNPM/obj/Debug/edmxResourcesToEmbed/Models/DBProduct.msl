@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="FoodOrderingModelStoreContainer" CdmEntityContainer="FoodOrderingEntitiesPro">
+  <EntityContainerMapping StorageEntityContainer="FoodOrderingModelStoreContainer" CdmEntityContainer="FoodOrderingEntities">
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="FoodOrderingModel.Product">
         <MappingFragment StoreEntitySet="Products">
@@ -11,20 +11,7 @@
           <ScalarProperty Name="Pro_Image" ColumnName="Pro_Image" />
           <ScalarProperty Name="IdCate" ColumnName="IdCate" />
           <ScalarProperty Name="Pro_Price" ColumnName="Pro_Price" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PurchaseOrderDetails">
-      <EntityTypeMapping TypeName="FoodOrderingModel.PurchaseOrderDetail">
-        <MappingFragment StoreEntitySet="PurchaseOrderDetail">
-          <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
-          <ScalarProperty Name="LineNumber" ColumnName="LineNumber" />
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-          <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
-          <ScalarProperty Name="ReceivedQty" ColumnName="ReceivedQty" />
-          <ScalarProperty Name="RejectedQty" ColumnName="RejectedQty" />
-          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="Pro_Type" ColumnName="Pro_Type" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
