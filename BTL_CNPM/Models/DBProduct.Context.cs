@@ -13,10 +13,10 @@ namespace BTL_CNPM.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FoodOrderingEntitiesPro : DbContext
+    public partial class FoodOrderingEntities : DbContext
     {
-        public FoodOrderingEntitiesPro()
-            : base("name=FoodOrderingEntitiesPro")
+        public FoodOrderingEntities()
+            : base("name=FoodOrderingEntities")
         {
         }
     
@@ -26,6 +26,5 @@ namespace BTL_CNPM.Models
         }
     
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<PurchaseOrderDetail> PurchaseOrderDetails { get; set; }
     }
 }

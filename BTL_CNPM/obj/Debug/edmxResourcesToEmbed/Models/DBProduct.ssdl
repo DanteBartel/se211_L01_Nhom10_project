@@ -11,36 +11,9 @@
     <Property Name="Pro_Image" Type="nvarchar(max)" />
     <Property Name="IdCate" Type="int" />
     <Property Name="Pro_Price" Type="nvarchar(max)" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'FoodOrdering.dbo.PurchaseOrderDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="PurchaseOrderDetail">
-    <Key>
-      <PropertyRef Name="PurchaseOrderID" />
-      <PropertyRef Name="LineNumber" />
-    </Key>
-    <Property Name="PurchaseOrderID" Type="int" Nullable="false" />
-    <Property Name="LineNumber" Type="smallint" Nullable="false" />
-    <Property Name="ProductID" Type="int" />
-    <Property Name="UnitPrice" Type="money" />
-    <Property Name="OrderQty" Type="smallint" />
-    <Property Name="ReceivedQty" Type="float" />
-    <Property Name="RejectedQty" Type="float" />
-    <Property Name="DueDate" Type="datetime" />
+    <Property Name="Pro_Type" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityContainer Name="FoodOrderingModelStoreContainer">
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PurchaseOrderDetail" EntityType="Self.PurchaseOrderDetail" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [PurchaseOrderDetail].[PurchaseOrderID] AS [PurchaseOrderID], 
-    [PurchaseOrderDetail].[LineNumber] AS [LineNumber], 
-    [PurchaseOrderDetail].[ProductID] AS [ProductID], 
-    [PurchaseOrderDetail].[UnitPrice] AS [UnitPrice], 
-    [PurchaseOrderDetail].[OrderQty] AS [OrderQty], 
-    [PurchaseOrderDetail].[ReceivedQty] AS [ReceivedQty], 
-    [PurchaseOrderDetail].[RejectedQty] AS [RejectedQty], 
-    [PurchaseOrderDetail].[DueDate] AS [DueDate]
-    FROM [dbo].[PurchaseOrderDetail] AS [PurchaseOrderDetail]</DefiningQuery>
-    </EntitySet>
   </EntityContainer>
 </Schema>

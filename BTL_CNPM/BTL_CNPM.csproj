@@ -161,9 +161,6 @@
     <Compile Include="Models\Product.cs">
       <DependentUpon>DBProduct.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PurchaseOrderDetail.cs">
-      <DependentUpon>DBProduct.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -234,6 +231,10 @@
     <Content Include="Views\ShopingCart\ShowtoCart.cshtml" />
     <Content Include="Views\ShopingCart\Total_Items_Cart.cshtml" />
     <Content Include="Views\Shared\_Layout - ShowtoCart.cshtml" />
+    <Content Include="Views\Home\Index_combo.cshtml" />
+    <Content Include="Views\Home\Index_mdish.cshtml" />
+    <Content Include="Views\Home\Index_snack.cshtml" />
+    <Content Include="Views\Home\Index_drink.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

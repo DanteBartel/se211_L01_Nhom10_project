@@ -30,9 +30,32 @@
     </style>
 </head>
 <h2>Order Food</h2>
- 
+
+<br />
+
+<a href="/Home/Index">
+    <btn class="btn btn-default">All</btn>
+</a>
+
+<a href="/Home/Index_combo">
+    <btn class="btn btn-default">Combos</btn>
+</a>
+
+<a href="/Home/Index_mdish">
+    <btn class="btn btn-default">Main Dishes</btn>
+</a>
+
+<a href="/Home/Index_snack">
+    <btn class="btn btn-default">Snacks</btn>
+</a>
+
+<a href="/Home/Index_drink">
+    <btn class="btn btn-default">Drinks</btn>
+</a>
+
+
 <div class="container">
-    <div class="row">
+    <div class="row">    
         @foreach (var item in Model)
         {
             string temp = item.IDPro.ToString();
@@ -44,11 +67,11 @@
                     Price: @Html.DisplayFor(model => item.Pro_Price) VND
                     <br />
                     <a class="btn" data-toggle="modal" data-target="#@temp">
-                        <button class="btn btn-default">Detail</button>                                       
+                        <btn class="btn btn-default">Detail</btn>
                     </a>
                     <a href="/ShopingCart/Addtocart/@item.IDPro">
                         <img src="@Url.Content("~/Content/Image/Cart1.png")" style="width:50px;height:40px" />
-                    </a>                   
+                    </a>
                 </div>
             </div>
 
@@ -68,7 +91,7 @@
                                 <div class="row">
                                     <div class="col-md-2">
                                         <img src="@Url.Content(item.Pro_Image)" style="height:150px;width:150px;margin:10px" />
-                                    </div>  
+                                    </div>
                                     <div class="col-md-5">
                                         <div class="row">
                                             <div class="col-md-3">
@@ -82,14 +105,20 @@
                                             <div class="col-md-8">
                                                 Name: @item.ProName
                                             </div>
-                                            
+
                                         </div>
                                         <div class="row">
                                             <div class="col-md-8">
                                                 Description: @item.Pro_Des
                                             </div>
-                                            
+
                                         </div>
+
+                                        <div class="row">
+
+                                        </div>
+
+
                                     </div>
                                 </div>
                             </div>
@@ -97,13 +126,15 @@
 
                         <div class="modal-footer">
                             <a href="/ShopingCart/Addtocart/@item.IDPro">
-                                <button class="btn btn-primary">Choose</button>
-                            </a>                         
-                            <button class="btn btn-default" data-dismiss="modal">Cancel</button>                                                    
+                                <btn class="btn btn-primary">Choose</btn>
+                            </a>
+                            <button class="btn btn-default" data-dismiss="modal">Cancel</button>
                         </div>
 
                     </div>
                 </div>
+
+
             </div>
 
         }

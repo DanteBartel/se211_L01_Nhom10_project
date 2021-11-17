@@ -11,23 +11,9 @@
     <Property Name="Pro_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="IdCate" Type="Int32" />
     <Property Name="Pro_Price" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Pro_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
-  <EntityType Name="PurchaseOrderDetail">
-    <Key>
-      <PropertyRef Name="PurchaseOrderID" />
-      <PropertyRef Name="LineNumber" />
-    </Key>
-    <Property Name="PurchaseOrderID" Type="Int32" Nullable="false" />
-    <Property Name="LineNumber" Type="Int16" Nullable="false" />
-    <Property Name="ProductID" Type="Int32" />
-    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="OrderQty" Type="Int16" />
-    <Property Name="ReceivedQty" Type="Double" />
-    <Property Name="RejectedQty" Type="Double" />
-    <Property Name="DueDate" Type="DateTime" Precision="3" />
-  </EntityType>
-  <EntityContainer Name="FoodOrderingEntitiesPro" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="FoodOrderingEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Products" EntityType="Self.Product" />
-    <EntitySet Name="PurchaseOrderDetails" EntityType="Self.PurchaseOrderDetail" />
   </EntityContainer>
 </Schema>

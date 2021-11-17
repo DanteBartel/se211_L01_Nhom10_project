@@ -8,8 +8,28 @@ namespace BTL_CNPM.Controllers
 {
     public class HomeController : Controller
     {
-        FoodOrderingEntitiesPro _db = new FoodOrderingEntitiesPro();
+        FoodOrderingEntities _db = new FoodOrderingEntities();
         public ActionResult Index()
+        {
+            return View(_db.Products.ToList());
+        }
+
+        public ActionResult Index_combo()
+        {
+            return View(_db.Products.ToList());
+        }
+
+        public ActionResult Index_mdish()
+        {
+            return View(_db.Products.ToList());
+        }
+
+        public ActionResult Index_snack()
+        {
+            return View(_db.Products.ToList());
+        }
+
+        public ActionResult Index_drink()
         {
             return View(_db.Products.ToList());
         }

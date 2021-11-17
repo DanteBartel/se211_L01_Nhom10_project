@@ -9,7 +9,7 @@ namespace BTL_CNPM.Controllers
 {
     public class ProductController : Controller
     {
-        FoodOrderingEntitiesPro _db = new FoodOrderingEntitiesPro();
+        FoodOrderingEntities _db = new FoodOrderingEntities();
         // GET: Product
         public ActionResult Index()
         {           
