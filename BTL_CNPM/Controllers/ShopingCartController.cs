@@ -29,6 +29,8 @@ namespace BTL_CNPM.Controllers
             {
                 GetCart().Add(pro);
             }
+
+
             return RedirectToAction("Index", "Home");
         }
         public ActionResult ShowtoCart()
@@ -43,6 +45,10 @@ namespace BTL_CNPM.Controllers
             Cart cart = Session["Cart"] as Cart;
             int id = int.Parse(form["IDpro"]);
             int quantity = int.Parse(form["Quantity"]);
+            if (quantity < 0)
+            {
+                quantity = 0;
+            }
             cart.Update_Quantity(id, quantity);
 
             return RedirectToAction("ShowtoCart", "ShopingCart");
